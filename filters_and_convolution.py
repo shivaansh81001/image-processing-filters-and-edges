@@ -45,3 +45,32 @@ def Filters():
     #plt.imshow(laplacian,cmap='gray')
     #plt.show()
     #print(laplacian_filter)
+    ################################################################# Gaussian #####################################################
+    
+    gaussian_filter = (1/273)*np.array([[1,  4,   7,   4,  1],
+                                        [4, 16, 26, 16, 4],
+                                        [7, 26, 41, 26, 7],
+                                        [4, 16, 26, 16, 4],
+                                        [1,   4,   7,   4, 1]]).astype(np.float64)
+    gaussian_output = np.copy(output_template)
+    gaussian = filtering( g_img_padded, gaussian_filter , gaussian_output)
+    #plt.imshow(gaussian ,cmap='gray')
+    #plt.show()
+
+    ################################################################# test kernel #####################################################
+    
+    q3_filter = np.array([[0,0,0,0,0],
+                        [0,1,0,1,0],
+                        [0,0,0,1,0]])
+    q3_output = np.copy(output_template)
+    q3 = filtering( g_img_padded, q3_filter , q3_output)
+    #plt.imshow(q3 ,cmap='gray')
+    #plt.show()
+    ################################################################# Q 4 #####################################################
+    q4_filter = np.array([[0,0,0],
+                            [6,0,6],
+                            [0,0,0]])
+    q4_output = np.copy(output_template)
+    q4 = filtering( g_img_padded, q4_filter , q4_output)
+    #plt.imshow(q4 ,cmap='gray')
+    #plt.show()
