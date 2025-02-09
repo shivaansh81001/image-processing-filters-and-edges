@@ -65,6 +65,45 @@ def Filters():
         ssd = np.sum((gaussian.astype(np.float64) - b_part.astype(np.float64)) ** 2)
         ssd = ssd/2048
         return ssd
+    
+    def print_images(g_img,laplacian,gaussian, b_part , Q3, Q4):
+        '''input - original image, laplacian filter, gaussian filter, sobel filter, sample filters
+            output- None 
+            displays the filters'''
+
+        plt.figure(figsize=(10, 12)) 
+        images = [
+            (g_img, 'Original Image'),
+            (laplacian, 'Laplacian Filter'),
+            (g_img, 'Original Image'),
+            (gaussian, 'Gaussian Filter'),
+            (g_img,'original'),
+            (b_part, '2b'),
+            (g_img, 'Original Image'),
+            (Q3, 'Q3 Filtered Image'),
+            (g_img, 'Original Image'),
+            (Q4, 'Q4 Filtered Image')
+        ]
+    
+        for i, (img, title) in enumerate(images, start=1):
+            plt.subplot(5, 2, i) 
+            plt.imshow(img, cmap='gray')
+            plt.title(title)
+    
+        plt.tight_layout()  
+        plt.show()
+        
+    def print_56(g_img, laplacian_applied, gaussian_applied):
+        '''input - original image, laplacian image, gaussian iamage
+            output - None
+            printing the images after applying the filters to the original image '''
+        plt.figure(figsize=(10,5))
+        plt.subplot(1, 3, 1), plt.imshow(g_img, cmap='gray')
+        plt.subplot(1, 3, 2), plt.imshow(laplacian_applied, cmap='gray')
+        plt.subplot(1, 3, 3), plt.imshow(gaussian_applied, cmap='gray')
+        plt.tight_layout()  
+        plt.show()
+
 
     g_img = read_image("assets/moon.png")    
     #plt.imshow(g_img,cmap='gray')
