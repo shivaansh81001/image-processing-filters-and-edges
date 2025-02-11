@@ -7,13 +7,15 @@ import sys
 from filters_and_convolution import Filters
 from noise_removal import noise_removal
 from inpainting import inpainting
+from gradient import Gradient
 
 
 
 def main():
     #Filters()
     #noise_removal()
-    inpainting()
+    #inpainting()
+    Gradient()
 
 
 
