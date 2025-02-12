@@ -13,10 +13,10 @@ from canny import Canny
 
 
 def main():
-    #Filters()
-    #noise_removal()
-    #inpainting()
-    #Gradient()
+    Filters()
+    noise_removal()
+    inpainting()
+    Gradient()
     Canny()
 
 
