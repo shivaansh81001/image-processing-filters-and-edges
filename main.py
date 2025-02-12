@@ -8,6 +8,7 @@ from filters_and_convolution import Filters
 from noise_removal import noise_removal
 from inpainting import inpainting
 from gradient import Gradient
+from canny import Canny
 
 
 
@@ -15,7 +16,8 @@ def main():
     #Filters()
     #noise_removal()
     #inpainting()
-    Gradient()
+    #Gradient()
+    Canny()
 
 
 
